@@ -23,8 +23,8 @@ async function listaVideo(){
     try {
         const listaApi = await conectaApi.listaVideos()
         listaApi.forEach(elemento => lista.appendChild(constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)));
-    } catch{
-        
+    } catch {
+        lista.innerHTML = `<h2 class="mensagem_titulo">Não foi possível carregar a lista de vídeos</h2>`
     }
 }
 
